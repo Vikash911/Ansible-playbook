@@ -33,4 +33,5 @@
       name: my1
       image: httpd
       command: sleep infinity
-                                                  
+  
+  inventory: /etc/ansible/hosts
