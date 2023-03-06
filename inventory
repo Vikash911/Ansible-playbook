@@ -1,2 +1,0 @@
-[web]
-192.168.53.89 ansible_user="root" ansible_password="redhat"
