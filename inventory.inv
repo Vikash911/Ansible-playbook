@@ -1,0 +1,2 @@
+[web]
+18.207.106.165 ansible_user="root" ansible_password="redhat"

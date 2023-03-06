@@ -1,0 +1,38 @@
+#new change
+
+- hosts: web
+  tasks:
+  - name: configure docker setup
+    get_url:
+        url: "https://download.docker.com/linux/centos/docker-ce.repo"
+        dest: "/etc/yum.repos.d/"
+
+  - name: install docker after setup the repo
+    package:
+      name: docker-ce
+      state: present
+
+  - name: after install the docker start the service
+    service:
+      name: "docker"
+      state: started
+
+  - name: install pip3
+    package:
+      name: "python3-pip"
+      state: present
+
+  - name: docker py
+    pip:
+      name: "docker-py"
+
+  - name: Pull docker image from docker
+    docker_image:
+      name: httpd
+
+  - name: run a container
+    docker_container:
+      name: my1
+      image: httpd
+      command: sleep infinity
+  
