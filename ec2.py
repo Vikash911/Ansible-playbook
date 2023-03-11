@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3.6.8
 
 '''
 EC2 external inventory script
@@ -149,7 +149,7 @@ from boto import route53
 from boto import sts
 
 from ansible.module_utils import six
-#from ansible.module_utils import ec2 as ec2_utils
+from ansible.module_utils import ec2 as ec2_utils
 from ansible.module_utils.six.moves import configparser
 
 HAS_BOTO3 = False
@@ -1685,8 +1685,6 @@ class Ec2Inventory(object):
             return json.dumps(data, sort_keys=True, indent=2, default=self._json_serial)
         else:
             return json.dumps(data, default=self._json_serial)
-
-
 if __name__ == '__main__':
     # Run the script
     Ec2Inventory()
