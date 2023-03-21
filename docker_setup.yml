@@ -29,6 +29,7 @@
   - name: Pull docker image from docker
     docker_image:
       name: httpd
+      source: pull
 
   - name: run a container
     docker_container:
