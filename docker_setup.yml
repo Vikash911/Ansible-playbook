@@ -1,6 +1,6 @@
 #new change
 
-- hosts: os1
+- hosts: tag_Name_os1
   tasks:
   - name: configure docker setup
     get_url:
