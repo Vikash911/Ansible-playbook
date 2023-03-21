@@ -16,6 +16,11 @@
     service:
       name: "docker"
       state: started
+  
+  - name: Pull docker image from docker
+    docker_image:
+      name: "httpd"
+      source: pull
 
   - name: install pip3
     package:
@@ -29,10 +34,6 @@
   - name: Download community docker  
     command: ansible-galaxy collection install community.docker
 
-  - name: Pull docker image from docker
-    docker_image:
-      name: "httpd"
-      source: pull
 
   - name: run a container
     docker_container:
