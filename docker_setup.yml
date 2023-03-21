@@ -26,6 +26,9 @@
     pip:
       name: "docker-py"
 
+  - name: Download community docker  
+    command: ansible-galaxy collection install community.docker
+
   - name: Pull docker image from docker
     docker_image:
       name: httpd
