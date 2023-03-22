@@ -7,12 +7,12 @@
 
   - name: install docker after setup the repo
     package:
-      name: docker-ce
+      name: podman
       state: present
 
   - name: after install the docker start the service
     service:
-      name: "docker"
+      name: "podman"
       state: started
   
 
@@ -23,20 +23,21 @@
 
   - name: docker py
     pip:
-      name: "docker-py"
+      name: "podman-py"
       state: present
+
   - name: log into docker hub registry
     docker_login:
         username: "Vikash911"
         password: "Vikash@911"
 
   - name: Pull docker image from docker
-    community.docker.docker_image:
+    podman_image:
       name: "httpd"
       source: pull
 
   - name: run a container
-    docker_container:
+    podman_container:
       name: my1
       image: httpd
       command: sleep infinity
