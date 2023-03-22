@@ -31,12 +31,12 @@
 
 
   - name: Pull docker image from docker
-    community.general.podman_image:
+    containers.podman.podman_image:
       name: "httpd"
       source: pull
 
   - name: run a container
-    community.general.podman_container:
+    containers.podman.podman_container:
       name: my1
       image: httpd
       command: sleep infinity
