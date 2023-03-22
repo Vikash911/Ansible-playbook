@@ -1,36 +1,18 @@
 - hosts: web
   tasks:
-  - name: configure docker setup
-    get_url:
-        url: "https://download.docker.com/linux/centos/docker-ce.repo"
-        dest: "/etc/yum.repos.d/"
-
-  - name: install docker after setup the repo
+  - name: install apache server
     package:
-      name: podman
+      name: httpd
       state: present
 
-  - name: after install the docker start the service
+  - name: after install the apache server start the service
     service:
-      name: "podman"
+      name: "httpd"
       state: started
+
+  - name: deploy webpage
+    copy:
+      src: index.html
+      dest: /var/www/html/
   
-
-  - name: install pip3
-    package:
-      name: "python3-pip"
-      state: present
-
-  - name: docker py
-    pip:
-      name: "podman-py"
-      state: present
-
-
-  - name: Pull docker image from docker
-    command: 
-      cmd: podman pull httpd
-
-
-
   
