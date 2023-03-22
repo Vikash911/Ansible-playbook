@@ -24,6 +24,7 @@
   - name: docker py
     pip:
       name: "docker-py"
+      state: present
   - name: log into docker hub registry
     docker_login:
         username: "Vikash911"
