@@ -24,6 +24,10 @@
   - name: docker py
     pip:
       name: "docker-py"
+  - name: log into docker hub registry
+    docker_login:
+        username: "Vikash911"
+        password: "Vikash@911"
 
   - name: Pull docker image from docker
     community.docker.docker_image:
