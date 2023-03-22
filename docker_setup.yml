@@ -15,10 +15,6 @@
       name: "docker"
       state: started
   
-  - name: Pull docker image from docker
-    docker_image:
-      name: "httpd"
-      source: pull
 
   - name: install pip3
     package:
