@@ -28,7 +28,8 @@
 
 
   - name: Pull docker image from docker
-    command: podman pull httpd
+    command: 
+      cmd: podman pull httpd
 
 
 
