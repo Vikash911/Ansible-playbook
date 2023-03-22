@@ -1,2 +1,2 @@
 [web]
-localhost
+54.198.224.98 ansible_user=ec2-user
