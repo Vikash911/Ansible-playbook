@@ -31,15 +31,8 @@
 
 
   - name: Pull docker image from docker
-    containers.podman.podman_image:
-      name: "httpd"
-      source: pull
+    command: podman pull httpd
 
-  - name: run a container
-    containers.podman.podman_container:
-      name: my1
-      image: httpd
-      command: sleep infinity
 
 
   
