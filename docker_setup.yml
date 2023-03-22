@@ -1,4 +1,4 @@
-- hosts: tag_Name_Ansible
+- hosts: web
   tasks:
   - name: configure docker setup
     get_url:
