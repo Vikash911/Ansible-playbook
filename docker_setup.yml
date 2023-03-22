@@ -1,6 +1,3 @@
-- name: myplaybook
-  collections:
-  - community.general
 - hosts: web
   tasks:
   - name: configure docker setup
