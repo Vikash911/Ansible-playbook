@@ -26,10 +26,6 @@
       name: "podman-py"
       state: present
 
-  - name: log into docker hub registry
-    docker_login:
-        username: "Vikash911"
-        password: "Vikash@911"
 
   - name: Pull docker image from docker
     podman_image:
