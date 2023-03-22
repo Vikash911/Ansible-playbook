@@ -1,4 +1,4 @@
-- hosts: tag_Name_os1
+- hosts: tag_Name_Ansible
   tasks:
   - name: configure docker setup
     get_url:
@@ -28,10 +28,5 @@
   - name: Download community docker
     command: ansible-galaxy collection install community.docker
 
-  - name: launch container
-    docker_container:
-      name: my1
-      image: httpd
-      command: sleep infinity
 
 
