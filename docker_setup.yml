@@ -25,8 +25,16 @@
     pip:
       name: "docker-py"
 
-  - name: Download community docker
-    command: ansible-galaxy collection install community.docker
+  - name: Pull docker image from docker
+    community.docker.docker_image:
+      name: "httpd"
+      source: pull
+
+  - name: run a container
+    docker_container:
+      name: my1
+      image: httpd
+      command: sleep infinity
 
 
-
+  
