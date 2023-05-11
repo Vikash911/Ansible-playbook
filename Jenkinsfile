@@ -1,5 +1,7 @@
 pipeline{
-    agent mynode
+    agent { 
+    label 'mynode' 
+    }
     environment{
     AWS_EC2_PRIVATE_KEY=credentials('private-key')
     }
